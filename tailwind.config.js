@@ -8,6 +8,9 @@ export default {
   darkMode: "media",
   theme: {
     extend: {},
+    colors: {
+      
+    },
   },
   plugins: [
     require('flowbite/plugin')

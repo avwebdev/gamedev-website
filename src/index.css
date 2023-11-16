@@ -11,13 +11,17 @@
   src: url(./assets/Inter-VariableFont.ttf)
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .main {
   font-family: var(--font);
-  @apply font-semibold pt-7 flex flex-col items-center h-screen bg-white dark:bg-slate-900 dark:text-white;
+  @apply font-semibold pt-7 flex flex-col items-center h-screen text-[#e7fdb0];
 }
 
 .center {
-  @apply h-full flex flex-col justify-center items-center gap-5;
+  @apply flex flex-col flex-grow justify-center items-center gap-5;
 }
 
 /* :root {
