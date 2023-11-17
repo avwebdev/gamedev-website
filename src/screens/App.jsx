@@ -99,8 +99,8 @@ function App() {
           <Footer.Brand href="#" src="/logo.png"
             alt="Av Game Dev Logo" name="AV Game Dev" className="!text-[#e9ffb2]" />
           <div className="mt-0 flex space-x-5">
-            <Footer.Icon href="#" icon={() => <SiDiscord color="white" fontSize="2rem" />} />
-            <Footer.Icon href="#" icon={() => <SiInstagram color="white" fontSize="2rem" />} />
+            <Footer.Icon href="https://discord.com/invite/n3sShZe5g4" icon={() => <SiDiscord color="white" fontSize="2rem" />} />
+            <Footer.Icon href="https://instagram.com/avhs_gd" icon={() => <SiInstagram color="white" fontSize="2rem" />} />
             <Footer.Icon href="mailto:test@example.com" icon={() => <TbMail color="white" fontSize="2.2rem" />} />
             <Footer.Icon href="https://unity.com" icon={() => <SiUnity color="white" fontSize="2rem" />} />
             <Footer.Icon href="https://godotengine.org" icon={() => <SiGodotengine color="white" fontSize="2rem" />} />
