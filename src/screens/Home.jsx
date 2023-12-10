@@ -1,9 +1,11 @@
-import { Flowbite, Navbar, Footer } from "flowbite-react";
 import { useGlitch } from "react-powerglitch";
-import { SiDiscord, SiInstagram, SiGmail, SiUnity, SiGodotengine } from "react-icons/si";
-import { TbMail } from "react-icons/tb";
+import { Flowbite, Navbar, Footer } from "flowbite-react";
 
-function App() {
+import { TbMail } from "react-icons/tb";
+import { SiDiscord, SiInstagram, SiUnity, SiGodotengine } from "react-icons/si";
+
+
+function Home() {
   const glitch = useGlitch({
     "playMode": "always",
     "createContainers": true,
@@ -27,10 +29,10 @@ function App() {
     "pulse": false
   });
 
-  const customNavbarTheme = {
+  const customFlowbiteTheme = {
     navbar: {
       root: {
-        base: "bg-[#7ba27b] px-2 py-3 sm:px-3",
+        base: "bg-[#011223] px-2 py-3 sm:px-3 fixed top-0 inset-x-0 shadow-xl",
       },
       link: {
         base: "text-[#e9ffb2] text-[1.05rem] rounded-full bg-[#397b6c] py-2 px-5",
@@ -53,46 +55,44 @@ function App() {
   };
 
   return (
-    <Flowbite theme={{ theme: customNavbarTheme }}>
-      <div className="flex flex-col h-screen text-[#e9ffb2]">
-        <Navbar fluid>
-          <Navbar.Brand href="/">
-            <img src="/logo.png" className="w-9 h-9 mr-2" />
-            <span className="text-3xl font-semibold">
-              AV Game Dev
-            </span>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-          <Navbar.Collapse>
-            <Navbar.Link href="/" active>
-              Home
-            </Navbar.Link>
-            <Navbar.Link href="/#about">
-              About Us
-            </Navbar.Link>
-            <Navbar.Link href="/#join">
-              Join
-            </Navbar.Link>
-            <Navbar.Link href="/tutorials">
-              Tutorials
-            </Navbar.Link>
-            <Navbar.Link href="/games">
-              Games We've Made
-            </Navbar.Link>
-          </Navbar.Collapse>
-        </Navbar>
-        <div className="main center bg-[#253224]">
+    <Flowbite theme={{ theme: customFlowbiteTheme }}>
+      <Navbar fluid>
+        <Navbar.Brand href="/">
+          <img src="/logo.png" className="w-9 h-9 mr-2" />
+          <span className="text-3xl font-semibold">
+            AV Game Dev
+          </span>
+        </Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse>
+          <Navbar.Link href="/#main" active>
+            Home
+          </Navbar.Link>
+          <Navbar.Link href="/#about">
+            About Us
+          </Navbar.Link>
+          <Navbar.Link href="/#join">
+            Join
+          </Navbar.Link>
+          <Navbar.Link href="/tutorials">
+            Tutorials
+          </Navbar.Link>
+          <Navbar.Link href="/games">
+            Games We've Made
+          </Navbar.Link>
+        </Navbar.Collapse>
+      </Navbar>
+      <div id="main" className="main center bg-gradient-to-b from-[#1e667b] to-[#031622] text-[#e7fdb0]">
           <p className="text-6xl">AV Game Dev</p>
           <hr className="w-96 h-2 mx-auto border-0 rounded bg-[#e9ffb2]"></hr>
           <p className="text-2xl">Building the Future of Gaming</p>
         </div>
+      <div id="about" className="partition text-[#e9ffb2] bg-gradient-to-b from-[#9bae75] to-[#449869]">
+        <p className="text-4.5xl">Welcome to AV Game Dev</p>
+        <hr className="w-132 h-1 mt-2 mb-5 mx-auto border-0 rounded bg-[#e9ffb2]"></hr>
+        <p className="text-lg w-176 text-center">In this club, we teach our club members how to develop their own games in game engines used in the industry, such as Unity and Godot, and allow them to collaborate with other people to develop their own projects.</p>
       </div>
-      <div id="about" className="main text-[#e9ffb2] bg-gradient-to-b from-[#9bae75] to-[#449869]">
-        <p className="text-[2.6rem]">Welcome to AV Game Dev</p>
-        <hr className="w-[33rem] h-1 mt-2 mb-5 mx-auto border-0 rounded bg-[#e9ffb2]"></hr>
-        <p className="text-lg w-[44rem] text-center">In this club, we teach our club members how to develop their own games in game engines used in the industry, such as Unity and Godot, and allow them to collaborate with other people to develop their own projects.</p>
-      </div>
-      <div id="join" className="flex flex-col h-screen text-[#e9ffb2] bg-[#449869]">
+      <div id="join" className="partition text-[#e9ffb2] bg-[#449869]">
       </div>
       <Footer className="!bg-[#2f415b]">
         <div className="w-full bg-gray-700 px-4 py-6 center">
@@ -111,4 +111,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

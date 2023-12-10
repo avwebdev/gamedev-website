@@ -7,9 +7,17 @@ export default {
   ],
   darkMode: "media",
   theme: {
-    extend: {},
+    extend: {
+      fontSize: {
+        "4.5xl": "2.6em"
+      },
+      width: {
+        "132": "33em",
+        "176": "44em",
+      },
+    },
     colors: {
-      
+
     },
   },
   plugins: [
