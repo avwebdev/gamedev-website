@@ -13,6 +13,32 @@
 
 html {
   scroll-behavior: smooth;
+	scrollbar-color: gray #292929;
+  /* scrollbar-width: auto; */
+  margin: 0;
+  padding: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #292929;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: dimgray; 
 }
 
 .main {
@@ -21,7 +47,7 @@ html {
 }
 
 .partition {
-  @apply main pt-6 scroll-mt-14;
+  @apply main pt-5 scroll-mt-14;
 }
 
 .center {
