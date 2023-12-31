@@ -1,65 +1,61 @@
-// import { useGlitch } from "react-powerglitch";
+import React, { useState, useEffect, useRef } from "react";
+
+import { useGifController } from "gif-tsx";
+
 import { Flowbite, Navbar, Footer } from "flowbite-react";
 
 import { TbMail } from "react-icons/tb";
 import { SiDiscord, SiInstagram, SiUnity, SiGodotengine } from "react-icons/si";
 
-function Home() {
-  // const glitch = useGlitch({
-  //   "playMode": "always",
-  //   "createContainers": true,
-  //   "hideOverflow": false,
-  //   "timing": {
-  //     "duration": 2000,
-  //   },
-  //   "glitchTimeSpan": false,
-  //   "shake": {
-  //     "velocity": 1,
-  //     "amplitudeX": 0.01,
-  //     "amplitudeY": 0.01
-  //   },
-  //   "slice": {
-  //     "count": 3,
-  //     "velocity": 20,
-  //     "minHeight": 0.01,
-  //     "maxHeight": 0.3,
-  //   },
-  //   "pulse": false
-  // });
+import FLOWBITE_THEME from "../FlowbiteTheme";
 
-  const customFlowbiteTheme = {
-    navbar: {
-      root: {
-        base: "backdrop-blur bg-gradient-to-b from-[#7da279] to-[#7da2794A] px-2 py-3 sm:px-3 fixed top-0 inset-x-0 shadow-xl",
-      },
-      collapse: {
-        list: "mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-5 md:text-sm md:font-medium"
-      },
-      link: {
-        base: "font-semibold text-[#e9ffb2] text-[1.25rem] rounded-full px-5 py-2 inline-block transition duration-300 hover:scale-[1.1] hover:bg-[#55854a]",
-        active: {
-          on: "",
-          off: ""
-        }
-      },
-      brand: {
-        base: "flex items-center text-[#e9ffb2]"
-      },
-    },
-    footer: {
-      brand: {
-        base: "mb-4 flex items-center sm:mb-0",
-        img: "mr-3 h-8",
-        span: "self-center whitespace-nowrap text-[2.2rem] font-semibold !text-[#e9ffb2]"
-      }
-    }
-  };
+
+function getScrollPercent() {
+  var h = document.documentElement,
+    b = document.body,
+    st = "scrollTop",
+    sh = "scrollHeight";
+  return (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+}
+
+
+function Home() {
+  const [scrollPercent, setScrollPercent] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrollPercent(getScrollPercent());
+    };
+    // clean up code
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const canvasRef = useRef();
+  const controller = useGifController("/dino.gif", canvasRef);
+
+  // handle error state
+  if (controller.state === "error") {
+    // `controller` has type `GifControllerError`
+    console.error(controller.errorMessage);
+    return null;
+  }
+
+  let canvasProps, renderFrame;
+
+  if (controller.state === "resolved") {
+    // `controller` has type `GifControllerResolved`
+    ({ canvasProps, renderFrame } = controller);
+
+    renderFrame(Math.round(scrollPercent / 4 + 9) % 10);
+  }
 
   return (
-    <Flowbite theme={{ theme: customFlowbiteTheme }}>
+    <Flowbite theme={{ theme: FLOWBITE_THEME }}>
       <Navbar fluid>
         <Navbar.Brand href="/">
-          <img src="/logo.png" className="w-9 h-9 mr-2" />
+          <canvas {...(controller.state === "resolved" ? canvasProps: [])} ref={controller.state === "resolved" ? canvasRef : undefined} className="w-8 h-9 mr-2" />
           <span className="text-3xl font-semibold">
             AV Game Dev
           </span>
