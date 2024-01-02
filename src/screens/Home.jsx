@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import { useGifController } from "gif-tsx";
 
@@ -21,19 +21,51 @@ function getScrollPercent() {
 
 function Home() {
   const [scrollPercent, setScrollPercent] = useState(0);
+  const [canvasLoaded, setCanvasLoaded] = useState(false);
+  const canvasRef = useRef();
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrollPercent(getScrollPercent());
-    };
+    const onScroll = () => setScrollPercent(getScrollPercent());
+
     // clean up code
     window.removeEventListener("scroll", onScroll);
     window.addEventListener("scroll", onScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const canvasRef = useRef();
   const controller = useGifController("/dino.gif", canvasRef);
+
+  let canvasProps, play, pause, renderFrame, restart;
+  let onDinoGifHover, onDinoGifLeave;
+
+  if (controller.state === "resolved") {
+    // `controller` has type `GifControllerResolved`
+    ({ canvasProps, play, pause, renderFrame, restart } = controller);
+
+    restart();
+
+    if (!canvasLoaded) {
+      setCanvasLoaded(true);
+    }
+
+    renderFrame(Math.round(scrollPercent / 4 + 9) % 10);
+  }
+
+  useEffect(() => {
+    const element = canvasRef.current;
+    if (canvasLoaded && element) {
+      element.removeEventListener("mouseover", play);
+      element.removeEventListener("mouseleave", pause);
+      element.addEventListener("mouseover", play, { passive: true });
+      element.addEventListener("mouseleave", pause, { passive: true });
+
+      return () => {
+        element.removeEventListener("mouseover", play);
+        element.removeEventListener("mouseleave", pause);
+      }
+    }
+  }, [canvasLoaded, canvasRef, pause, play]);
 
   // handle error state
   if (controller.state === "error") {
@@ -42,20 +74,11 @@ function Home() {
     return null;
   }
 
-  let canvasProps, renderFrame;
-
-  if (controller.state === "resolved") {
-    // `controller` has type `GifControllerResolved`
-    ({ canvasProps, renderFrame } = controller);
-
-    renderFrame(Math.round(scrollPercent / 4 + 9) % 10);
-  }
-
   return (
     <Flowbite theme={{ theme: FLOWBITE_THEME }}>
       <Navbar fluid>
         <Navbar.Brand href="/">
-          <canvas {...(controller.state === "resolved" ? canvasProps: [])} ref={controller.state === "resolved" ? canvasRef : undefined} className="w-8 h-9 mr-2" />
+          <canvas {...(controller.state === "resolved" ? canvasProps: [])} ref={canvasRef} className="w-8 h-9 mr-2 hover:scale-110" />
           <span className="text-3xl font-semibold">
             AV Game Dev
           </span>
@@ -75,7 +98,7 @@ function Home() {
             Tutorials
           </Navbar.Link>
           <Navbar.Link href="/games">
-            Games We've Made
+            Games We&apos;ve Made
           </Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
