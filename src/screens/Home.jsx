@@ -32,11 +32,13 @@ function Home() {
 
   const controller = useGifController("/dino.gif", canvasRef);
 
-  let canvasProps, play, pause, renderFrame;
+  let canvasProps, play, pause, renderFrame, restart;
 
   if (controller.state === "resolved") {
     // `controller` has type `GifControllerResolved`
-    ({ canvasProps, play, pause, renderFrame } = controller);
+    ({ canvasProps, play, pause, renderFrame, restart } = controller);
+
+    restart();
 
     if (!canvasLoaded) {
       setCanvasLoaded(true);
