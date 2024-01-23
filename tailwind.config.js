@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 export default {
   content: [
     "./index.html",
@@ -9,19 +9,14 @@ export default {
   theme: {
     extend: {
       fontSize: {
-        "4.5xl": "2.6em"
+        "4.5xl": "2.6em",
       },
       width: {
-        "132": "33em",
-        "176": "44em",
+        132: "33em",
+        176: "44em",
       },
     },
-    colors: {
-
-    },
+    colors: {},
   },
-  plugins: [
-    require('flowbite/plugin')
-  ],
-}
-
+  plugins: [require("flowbite/plugin")],
+};

@@ -8,12 +8,12 @@
 
 @font-face {
   font-family: "Inter";
-  src: url(./assets/Inter-VariableFont.ttf)
+  src: url(./assets/Inter-VariableFont.ttf);
 }
 
 html {
   scroll-behavior: smooth;
-	scrollbar-color: gray #292929;
+  scrollbar-color: gray #292929;
   /* scrollbar-width: auto; */
   margin: 0;
   padding: 0;
@@ -29,7 +29,7 @@ html {
 ::-webkit-scrollbar-track {
   background: #292929;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: gray;
@@ -38,7 +38,7 @@ html {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: dimgray; 
+  background: dimgray;
 }
 
 .main {
