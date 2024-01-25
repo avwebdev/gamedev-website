@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --font: "Inter";
+  --font: "RedHatDisplay";
 }
 
 @font-face {
@@ -11,10 +11,31 @@
   src: url(./assets/Inter-VariableFont.ttf);
 }
 
+@font-face {
+  font-family: "JosefinSans";
+  src: url(./assets/JosefinSans-VariableFont.ttf);
+}
+
+@font-face {
+  font-family: "JosefinSans";
+  src: url(./assets/JosefinSans-Italic-VariableFont.ttf);
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "RedHatDisplay";
+  src: url(./assets/RedHatDisplay-VariableFont.ttf);
+}
+
+@font-face {
+  font-family: "RedHatDisplay";
+  src: url(./assets/RedHatDisplay-Italic-VariableFont.ttf);
+  font-style: italic;
+}
+
 html {
   scroll-behavior: smooth;
   scrollbar-color: gray #292929;
-  /* scrollbar-width: auto; */
   margin: 0;
   padding: 0;
 }
