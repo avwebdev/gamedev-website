@@ -47,7 +47,9 @@ function Home() {
         className="partition text-cello-900 dark:text-french-pass-200 bg-gradient-to-b from-french-pass-100 to-french-pass-300 dark:from-cello-900 dark:to-cello-700"
       >
         <p className="text-4.5xl font-bold text-center">About the Club</p>
-        <hr className="w-88 h-1 mt-2 mb-5 mx-auto border-0 rounded bg-cello-900 dark:bg-french-pass-200"></hr>
+        <div className="">
+          <hr className="w-88 h-1 mt-2 mb-5 mx-auto border-0 rounded bg-cello-900 dark:bg-french-pass-200"></hr>
+        </div>
         <p className="text-lg w-[80vw] text-center">
           In this club, we teach our club members how to develop games with game
           engines used in the industry, such as Unity and Godot, and allow them
