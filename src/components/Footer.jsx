@@ -18,10 +18,14 @@ function FooterComponent() {
           <Footer.Brand
             href="#"
             src="/logo.png"
-            alt="Av Game Dev Logo"
+            alt="AV Game Dev Logo"
             name="AV Game Dev"
             className="!text-[#e9ffb2]"
           />
+          <div className="text-lg flex items-center text-gray-200">
+            <img align="middle" className="w-8 h-8 inline" src="/webdev_logo.png" />
+            <span>&nbsp;Created by AV Web Dev</span>
+          </div>
           <div className="mt-0 flex space-x-5">
             <Footer.Icon
               href="https://discord.com/invite/n3sShZe5g4"

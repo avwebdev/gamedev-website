@@ -23,7 +23,7 @@ const FLOWBITE_THEME = {
   },
   footer: {
     root: {
-      base: "w-full bg-cello-400 dark:bg-[#283246] shadow md:flex md:items-center md:justify-between",
+      base: "font-['JosefinSans'] w-full bg-cello-400 dark:bg-[#283246] shadow md:flex md:items-center md:justify-between",
     },
     brand: {
       base: "mb-4 flex items-center sm:mb-0",

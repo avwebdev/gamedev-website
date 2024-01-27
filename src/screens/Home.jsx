@@ -13,24 +13,27 @@ function Home() {
         id="main"
         className="relative main center text-cello-900 dark:text-french-pass-200"
       >
-        <div className="absolute top-0 left-0 bg-slate-800 w-full h-full -z-10 opacity-50"></div>
+        <div className="absolute top-0 left-0 bg-slate-950 w-full h-full -z-10 opacity-50"></div>
         <div className="absolute top-0 left-0 w-full h-full -z-20">
-          <Carousel leftControl={"\u200b"} rightControl={"\u200b"}>
+          <Carousel leftControl={"\u200b"} rightControl={"\u200b"} indicators={false}>
             <img
+              className="object-cover h-full w-full"
               src="https://fujifilm-x.com/wp-content/uploads/2021/01/gfx100s_sample_04_thum-1.jpg"
               alt="Placeholder 1"
             />
             <img
+              className="object-cover h-full w-full"
               src="https://images.unsplash.com/photo-1472791108553-c9405341e398?q=80&w=1874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Placeholder 2"
             />
             <img
+              className="object-cover h-full w-full"
               src="https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8fA%3D%3D"
               alt="Placeholder 3"
             />
           </Carousel>
         </div>
-        <p className="text-7xl font-bold">AV Game Dev</p>
+        <p className="text-7xl font-bold leading-[0.7]">AV Game Dev</p>
         <hr className="w-120 h-1.5 mx-auto border-0 rounded bg-cello-900 dark:bg-french-pass-200"></hr>
         <p className="text-1.5xl leading-3">
           Building the Future of Game Development

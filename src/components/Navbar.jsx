@@ -76,7 +76,7 @@ function NavbarComponent({ activeRoute }) {
 
   return (
     <Flowbite theme={{ theme: FLOWBITE_THEME }}>
-      <Navbar fluid>
+      <Navbar className="z-50" fluid>
         <Navbar.Brand href="/">
           <canvas
             {...(controller.state === "resolved" ? canvasProps : [])}
