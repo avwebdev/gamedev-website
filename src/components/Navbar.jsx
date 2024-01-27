@@ -17,7 +17,7 @@ function getScrollPercent() {
 }
 
 /**
- * @param {{"home"} | {"about"} | {"join"} | {"tutorials"} | {"games"}} activeRoute
+ * @param {{activeRoute: "home" | "about" | "join" | "tutorials" | "games"}} activeRoute
  * @returns {JSX.Element}
  * @constructor
  * @description Navbar component
