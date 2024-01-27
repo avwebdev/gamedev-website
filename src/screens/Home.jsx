@@ -13,7 +13,7 @@ function Home() {
         id="main"
         className="relative main center text-cello-900 dark:text-french-pass-200"
       >
-        <div className="absolute top-0 left-0 bg-slate-950 w-full h-full -z-10 opacity-50"></div>
+        <div className="absolute top-0 left-0 bg-slate-950 w-full h-full -z-10 opacity-50" />
         <div className="absolute top-0 left-0 w-full h-full -z-20">
           <Carousel
             leftControl={"\u200b"}
@@ -38,7 +38,7 @@ function Home() {
           </Carousel>
         </div>
         <p className="text-7xl font-bold leading-[0.7]">AV Game Dev</p>
-        <hr className="w-120 h-1.5 mx-auto border-0 rounded bg-cello-900 dark:bg-french-pass-200"></hr>
+        <hr className="w-120 h-1.5 mx-auto border-0 rounded bg-cello-900 dark:bg-french-pass-200" />
         <p className="text-1.5xl leading-3">
           Building the Future of Game Development
         </p>
@@ -52,7 +52,7 @@ function Home() {
       >
         <p className="text-4.5xl font-bold text-center">About the Club</p>
         <div className="">
-          <hr className="w-88 h-1 mt-2 mb-5 mx-auto border-0 rounded bg-cello-900 dark:bg-french-pass-200"></hr>
+          <hr className="w-88 h-1 mt-2 mb-5 mx-auto border-0 rounded bg-cello-900 dark:bg-french-pass-200" />
         </div>
         <p className="text-lg w-[80vw] text-center">
           In this club, we teach our club members how to develop games with game
@@ -61,7 +61,7 @@ function Home() {
         </p>
         <div className="pt-6">
           <p className="text-3xl font-bold text-center">About the Team</p>
-          <hr className="w-72 h-1 mt-2 mb-5 mx-auto border-0 rounded bg-cello-900 dark:bg-french-pass-200"></hr>
+          <hr className="w-72 h-1 mt-2 mb-5 mx-auto border-0 rounded bg-cello-900 dark:bg-french-pass-200" />
           <p className="text-lg w-[60%] m-auto text-center">
             Our club consists of various members who are passionate about game
             development.
@@ -88,11 +88,11 @@ function Home() {
       >
         <div className="font-bold float-right">
           <p className="text-4.5xl text-center">Join the Club!</p>
-          <hr className="w-72 h-1.5 mx-auto mb-4 border-0 rounded bg-cello-900 dark:bg-french-pass-200"></hr>
+          <hr className="w-72 h-1.5 mx-auto mb-4 border-0 rounded bg-cello-900 dark:bg-french-pass-200" />
           <iframe
             className=" h-[70vh] aspect-[7/4]"
             src="https://docs.google.com/presentation/d/e/2PACX-1vSkcsrjaHOt188upodiUFI_mDqWzJLvbsEAmQ_z7bVBXSyvAJdYRJQB3mleDwdfhqp-ZD9C2KDCX0jC/embed"
-          ></iframe>
+          />
         </div>
       </div>
       <FooterComponent />
