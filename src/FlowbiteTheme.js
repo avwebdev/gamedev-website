@@ -1,3 +1,4 @@
+/** @type {import("flowbite-react").CustomFlowbiteTheme} **/
 const FLOWBITE_THEME = {
   navbar: {
     root: {
@@ -29,6 +30,11 @@ const FLOWBITE_THEME = {
       base: "mb-4 flex items-center sm:mb-0",
       img: "mr-3 h-8",
       span: "self-center whitespace-nowrap text-[2.2rem] font-semibold !text-[#e9ffb2]",
+    },
+  },
+  carousel: {
+    scrollContainer: {
+      base: "flex h-full snap-mandatory overflow-y-hidden overflow-x-scroll scroll-smooth",
     },
   },
 };
