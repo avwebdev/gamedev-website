@@ -1,8 +1,6 @@
 "use client";
 
-import type { StaticImageData } from "next/image";
 import Link from "next/link";
-// import ExportedImage from "next-image-export-optimizer";
 import React from "react";
 
 export function ContentSection({
