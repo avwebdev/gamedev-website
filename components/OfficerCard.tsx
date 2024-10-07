@@ -1,37 +1,29 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
-interface Props {
+export interface OfficerCardProps {
   name: string;
   image: string;
   position: string;
   className?: string;
 }
 
-const OfficerCard: React.FC<Props> = ({
-  name,
-  image,
-  position,
-  className = "",
-}) => {
+export default function OfficerCard({ name, image, position, className = "" }: OfficerCardProps) {
   return (
     <div className={`relative ${className}`}>
       <div className="overflow-hidden rounded-xl">
         <Image
-          width={500}
+          width={400}
           height={300}
-          className="hover:scale-110 transition-all duration-300 overflow-hidden"
+          className="sepia-[0.25] hover:sepia-0 hover:scale-110 transition-all ease-in-out duration-300 overflow-hidden"
           src={image}
           alt={name}
         />
       </div>
 
-      <div className="text-white font-tomorrow text-center absolute bottom-1 w-full">
-        <h3 className="~text-xl/3xl font-medium">{name}</h3>
-        <p>{position}</p>
+      <div className="text-white font-tomorrow text-center pt-1 w-full">
+        <h3 className="~text-xl/2xl font-medium drop-shadow-2xl">{name}</h3>
+        <p className="~text-md/lg">{position}</p>
       </div>
     </div>
   );
-};
-
-export default OfficerCard;
-export type { Props as OfficerCardProps };
+}
